@@ -1,6 +1,7 @@
 /*
 read from the default PCM device and writes to standard output for 5 seconds of data
 修改声音采集配置时候，出了修改声音通道数量，还应该考虑申请的缓冲区时候足够大 
+XMOS共计有6个声道，最后一个声道是回放声道，2345声道分别对应1346麦克的数据流。
 */
 
 #define ALSA_PCM_NEW_HW_PARAMS_API
@@ -49,7 +50,7 @@ int main()
                                 SND_PCM_FORMAT_S16_LE);
    /* two channels(stereo) */
    // 设置双声道立体声 
-   snd_pcm_hw_params_set_channels(handle,params,2);
+   snd_pcm_hw_params_set_channels(handle,params,6);
    /* sampling rate */
    // 设置采样率 
    val = 44100;
@@ -73,7 +74,7 @@ int main()
    // 配置一个缓冲区用来缓冲数据，缓冲区要足够大，此处看意思应该是只配置了
    // 够两个声道用的缓冲内存 
    snd_pcm_hw_params_get_period_size(params,&frames,&dir);
-   size = frames * 4; /* 2 bytes/sample, 2channels */
+   size = frames * 12; /* 2 bytes/sample, 2channels */
    buffer = ( char * ) malloc(size);
    /* loop for 5 seconds */
    // 记录五秒长的声音 
