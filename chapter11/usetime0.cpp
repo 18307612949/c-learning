@@ -8,7 +8,7 @@ int main()
 	using std::endl;
 	Time planning;
 	Time coding(3,40);
-	Time fixing(6,55);
+	Time fixing(6,45);
 	Time total;
 
 	cout << "planning time =";
