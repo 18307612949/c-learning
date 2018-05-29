@@ -1,5 +1,5 @@
 test:test.o country.o
-	g++ -o test test.o country.o
+	g++ -g -o test test.o country.o
 
 test.o:test.cpp country.h
 	g++ -c test.cpp

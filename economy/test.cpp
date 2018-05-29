@@ -3,12 +3,13 @@
 
 int main()
 {
-	Country china(14.0,82.0);
-	china.getGdp();
-	china.getPopulation();
-	china.getPerCapitaGdp();
-	china.developTheGdp();
-	china.multiplyThePopulation();
+	// Country countries[5];
+	Country countries[1] = {Country("china",82.0,14)};
+	countries[0].getGdp();
+	// china.getPopulation();
+	// china.getPerCapitaGdp();
+	// china.developTheGdp();
+	// china.multiplyThePopulation();
 
 	return 0;
 }

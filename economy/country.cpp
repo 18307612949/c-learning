@@ -1,9 +1,11 @@
 // country.cpp -- use to describe the index of a country
 #include"iostream"
 #include"country.h"
+#include"string"
 
-Country::Country(float gdp,float population)
+Country::Country(string name,float gdp,float population)
 {
+	_name = name;
 	_gdp = gdp;
 	_population = population;
 }
@@ -30,7 +32,7 @@ void Country::multiplyThePopulation()
 
 void Country::getGdp()
 {
-	std::cout << "gdp = ";
+	std::cout << _name << "_gdp = ";
 	std::cout << _gdp << std::endl;
 }
 

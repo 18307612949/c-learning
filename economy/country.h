@@ -3,6 +3,9 @@
 #ifndef COUNTRY_H_
 #define COUNTRY_H_
 // #include"iostream"
+#include"string"
+
+using std::string;
 
 class Country
 {
@@ -12,9 +15,10 @@ class Country
 private:
 	float _gdp;
 	float _population;
+	string _name;
 
 public:
-	Country(float gdp,float population);
+	Country(string name,float gdp,float population);
 	void developTheGdp();
 	void multiplyThePopulation();
 	void getGdp();
